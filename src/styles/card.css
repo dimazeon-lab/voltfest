@@ -1,0 +1,59 @@
+/* black card with accent border, corner dots, diagonal lines and a "card-scroll" label */
+.card {
+  --line: color-mix(in srgb, var(--main-color) 22%, transparent);
+  position: relative;
+  background: #000;
+  border: 1px solid var(--main-color);
+  padding: calc(10 * var(--u) - 1px);
+}
+
+/* corner dots (4x4, centered on the border corners) */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--main-color), var(--main-color)) 0 0 / 4px 4px no-repeat,
+    linear-gradient(var(--main-color), var(--main-color)) 100% 0 / 4px 4px no-repeat,
+    linear-gradient(var(--main-color), var(--main-color)) 0 100% / 4px 4px no-repeat,
+    linear-gradient(var(--main-color), var(--main-color)) 100% 100% / 4px 4px no-repeat;
+}
+
+/* diagonals */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background:
+    linear-gradient(to top right, transparent calc(50% - 0.5px), var(--line) calc(50% - 0.5px), var(--line) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    linear-gradient(to bottom right, transparent calc(50% - 0.5px), var(--line) calc(50% - 0.5px), var(--line) calc(50% + 0.5px), transparent calc(50% + 0.5px));
+}
+
+.card__label {
+  position: absolute;
+  z-index: 3;
+  left: -1px;
+  top: calc(-21 * var(--u));
+  padding: calc(2 * var(--u)) calc(10 * var(--u));
+  background: var(--main-color);
+  color: var(--dark-main);
+  font-family: var(--f-text);
+  font-size: calc(12 * var(--u));
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.card__text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--f-display);
+  font-size: calc(130 * var(--u));
+  line-height: 0.84;
+  letter-spacing: calc(-1.3 * var(--u));
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--white);
+}

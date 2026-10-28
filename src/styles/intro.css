@@ -1,0 +1,84 @@
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calc(160 * var(--u));
+}
+
+.intro__text {
+  width: calc(1360 * var(--u));
+  font-family: var(--f-display);
+  font-size: calc(120 * var(--u));
+  line-height: 0.9;
+  letter-spacing: calc(-1.2 * var(--u));
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.intro__line {
+  display: block;
+  white-space: pre;
+}
+
+.intro__cta { margin-top: calc(40 * var(--u)); }
+
+/* gap in the text that holds a card; width = the space run from the design */
+.slot {
+  --lh: 108; /* line box: 120 * 0.9 */
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  width: calc(var(--w) * var(--u));
+  height: calc(var(--lh) * var(--u));
+}
+
+.slot__item {
+  position: absolute;
+  top: calc(8 * var(--u));
+  left: calc(var(--x) * var(--u));
+  width: calc(160 * var(--u));
+  height: calc(90 * var(--u));
+}
+
+.slot__card {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+}
+
+.slot__img {
+  position: absolute;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* spaces between the words in design: 15 / 14 / 14 spaces at 120px */
+.slot--cursor { --w: 211.1; --x: 24.4; }
+.slot--laptop { --w: 197;   --x: 13.6; }
+.slot--star   { --w: 197;   --x: 10.9; }
+
+/* cursor: 119px square rotated 45deg */
+.slot__img--cursor {
+  left: calc(22.65 * var(--u));
+  top: calc(-23.35 * var(--u));
+  width: calc(119 * var(--u));
+  height: calc(119 * var(--u));
+  transform: rotate(45deg);
+}
+
+.slot__img--laptop {
+  left: calc(10 * var(--u));
+  top: calc(-70 * var(--u));
+  width: calc(136 * var(--u));
+  height: calc(202 * var(--u));
+}
+
+.slot__img--star {
+  left: calc(8 * var(--u));
+  top: calc(-27 * var(--u));
+  width: calc(144 * var(--u));
+  height: calc(144 * var(--u));
+}

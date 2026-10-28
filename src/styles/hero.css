@@ -1,0 +1,36 @@
+.hero {
+  position: relative;
+  height: calc(900 * var(--u));
+}
+
+.hero__title {
+  position: absolute;
+  left: calc(40 * var(--u));
+  top: calc(160 * var(--u));
+  width: calc(455 * var(--u));
+}
+
+.hero__date {
+  position: absolute;
+  right: calc(40 * var(--u));
+  top: calc(582 * var(--u));
+  width: max-content;
+}
+.hero__date .card__text { text-align: right; }
+
+.hero__lead {
+  position: absolute;
+  left: calc(40 * var(--u));
+  top: calc(696 * var(--u));
+  width: calc(388 * var(--u));
+  color: var(--white);
+  font-size: calc(16 * var(--u));
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.hero__cta {
+  position: absolute;
+  left: calc(40 * var(--u));
+  top: calc(760 * var(--u));
+}

@@ -1,0 +1,58 @@
+/* "ticket" button: accent bg, dashed divider, notches at the divider, star icon */
+.btn {
+  --w: 260;
+  --h: 60;
+  --divider: 60; /* distance from the right edge to the divider */
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: calc(var(--w) * var(--u));
+  height: calc(var(--h) * var(--u));
+  padding-left: calc(20 * var(--u));
+  background: var(--main-color);
+  color: var(--dark-main);
+  font-family: var(--f-text);
+  font-weight: 700;
+  font-size: calc(16 * var(--u));
+  line-height: 1.25;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-mask:
+    radial-gradient(circle at calc(100% - var(--divider) * var(--u)) 0, transparent 4px, #000 4.5px),
+    radial-gradient(circle at calc(100% - var(--divider) * var(--u)) 100%, transparent 4px, #000 4.5px);
+  -webkit-mask-composite: source-in;
+  mask:
+    radial-gradient(circle at calc(100% - var(--divider) * var(--u)) 0, transparent 4px, #000 4.5px),
+    radial-gradient(circle at calc(100% - var(--divider) * var(--u)) 100%, transparent 4px, #000 4.5px);
+  mask-composite: intersect;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  right: calc(var(--divider) * var(--u));
+  top: 50%;
+  width: 1px;
+  height: calc(49 * var(--u));
+  transform: translateY(-50%);
+  background: repeating-linear-gradient(to bottom, var(--dark-main) 0 3px, transparent 3px 6px);
+}
+
+.btn__icon {
+  position: absolute;
+  right: calc(17 * var(--u));
+  top: 50%;
+  width: calc(23 * var(--u));
+  height: calc(23 * var(--u));
+  transform: translateY(-50%);
+}
+
+/* small (header) */
+.btn--sm {
+  --w: 180;
+  --h: 40;
+  --divider: 44;
+  font-size: calc(14 * var(--u));
+}
+.btn--sm::before { height: calc(29 * var(--u)); }
+.btn--sm .btn__icon { width: calc(13 * var(--u)); height: calc(13 * var(--u)); }

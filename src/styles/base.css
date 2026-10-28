@@ -1,0 +1,68 @@
+:root {
+  /* colors from Figma styles */
+  --bg: #efefef;
+  --white: #fdffeb;
+  --dark-main: #3e4300;
+  --dark-grey: #323232;
+  --main-color: #ebff00;
+
+  /* fonts */
+  --f-display: 'FK Screamer Upright', sans-serif;
+  --f-slanted: 'FK Screamer Slanted', var(--f-display);
+  --f-semi-slanted: 'FK Screamer Semi Slanted', var(--f-display);
+  --f-backslanted: 'FK Screamer Backslanted', var(--f-display);
+  --f-semi-backslanted: 'FK Screamer Semi Backslanted', var(--f-display);
+  --f-text: 'Victor Mono', ui-monospace, monospace;
+
+  /* 1u = 1px of the 1440px Figma frame; everything scales with the viewport width */
+  --u: calc(100vw / 1440);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--f-text);
+  font-size: calc(16 * var(--u));
+  line-height: 1.4;
+}
+
+h1, h2, p { margin: 0; font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+img { display: block; }
+
+/* page wrapper + the long background shared by the whole site */
+.page {
+  position: relative;
+  /* TEMP: full Figma frame height so the whole background is visible until the other blocks are built */
+  min-height: calc(9193 * var(--u));
+}
+
+.page__bg {
+  position: absolute;
+  inset: 0;
+  background: url('/img/background.svg') top center / 100% auto no-repeat;
+  pointer-events: none;
+}
+
+main { position: relative; }
+
+/* text styles */
+.t-slanted { font-family: var(--f-slanted); }
+.t-semi-slanted { font-family: var(--f-semi-slanted); }
+.t-backslanted { font-family: var(--f-backslanted); }
+.t-semi-backslanted { font-family: var(--f-semi-backslanted); }
+.t-tight { letter-spacing: calc(-0.16 * var(--u)); }

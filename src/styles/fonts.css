@@ -1,0 +1,6 @@
+/* FK Screamer Legacy (Trial): every style is a separate family, as in Figma */
+@font-face { font-family: 'FK Screamer Upright';        src: url('/fonts/fk-screamer-upright.woff2') format('woff2');         font-display: swap; }
+@font-face { font-family: 'FK Screamer Slanted';        src: url('/fonts/fk-screamer-slanted.woff2') format('woff2');         font-display: swap; }
+@font-face { font-family: 'FK Screamer Semi Slanted';   src: url('/fonts/fk-screamer-semi-slanted.woff2') format('woff2');    font-display: swap; }
+@font-face { font-family: 'FK Screamer Backslanted';    src: url('/fonts/fk-screamer-backslanted.woff2') format('woff2');     font-display: swap; }
+@font-face { font-family: 'FK Screamer Semi Backslanted'; src: url('/fonts/fk-screamer-semi-backslanted.woff2') format('woff2'); font-display: swap; }
